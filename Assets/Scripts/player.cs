@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    public static Player instance;
+    public float playerHealth = 10f;
     public Rigidbody2D rb;
     private Animator animator;
     public float jumpForce = 7f;
@@ -19,12 +21,25 @@ public class player : MonoBehaviour
     public GameObject arrowPrefab;
     public Transform arrowSpawnPoint;
     public float arrowSpeed = 7f;
+    public GameObject FloatingText;
+
+    public Transform PlayerDamageTextPoint;
+    public Transform explosionPoint;
+    public GameObject Explosion;
 
     void Start()
      {
           isGrounded = true;
           facingRight = true;
           animator = this.gameObject.GetComponent<Animator>();
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -67,9 +82,24 @@ public class player : MonoBehaviour
         GameObject tempArrowPrefab =Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
         tempArrowPrefab.GetComponent<Rigidbody2D>().linearVelocity = arrowSpawnPoint.right * arrowSpeed; 
     }
+
+    public void PlayerTookDamage(int damageamount)
+    {
+        if (playerHealth <= 0f)
+        {
+            die();
+            return;
+        }
+        animator.SetTrigger("hurt");
+        playerHealth -= damageamount;
+        CameraShake.instance.ShakeCamera(1f, 0.12f);
+        Instantiate(FloatingText, PlayerDamageTextPoint.position, Quaternion.identity);
+    }
+
     private void PlayRunAnimation()
     {
-        if(movement != 0f)
+        
+        if (movement != 0f)
         {
             animator.SetFloat("Run",1);
         }
@@ -123,5 +153,13 @@ public class player : MonoBehaviour
         }
         Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
         
+    }
+    void die()
+    {
+        Debug.Log("Player Died!");
+        CameraShake.instance.ShakeCamera(4f, 0.15f);
+        GameObject tempexplosion= Instantiate(Explosion, explosionPoint.position, Quaternion.identity);
+        Destroy(tempexplosion, .501f);
+        Destroy(this.gameObject);
     }
 }

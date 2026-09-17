@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Ground
   - Arrow
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: BG1
     uniqueID: 686577807
+    locked: 0
+  - name: water
+    uniqueID: 1980995511
     locked: 0
   - name: Default
     uniqueID: 0
