@@ -84,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1006178827
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8738615950573110220, guid: bc4bfba727a58074eac460202c5e89ef, type: 3}
@@ -223,7 +223,7 @@ MonoBehaviour:
   FloatingText: {fileID: 124469463254505629, guid: 64687127944903c4aad73baa3e502a7b, type: 3}
   EnemyDamageTextSpawnPoint: {fileID: 5658431947030770884}
   attackPoint: {fileID: 1256237520363522399}
-  attackRadius: 2.5
+  attackRadius: 2
 --- !u!1 &1805079852020820902
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 9111767552959969151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0}
+  m_LocalPosition: {x: -2.83, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

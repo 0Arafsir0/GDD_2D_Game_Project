@@ -65,15 +65,15 @@ public class enemy2 : MonoBehaviour
 
             if (collInfo)
             {
-                if (player.position.x > transform.position.x && facingleft == false)
+                if (player.position.x > transform.position.x && facingleft)
                 {
                     transform.eulerAngles = new Vector3(0, -180, 0);
-                    facingleft = true;
+                    facingleft = false;
                 }
-                else if (player.position.x < transform.position.x && facingleft == true)
+                else if (player.position.x < transform.position.x && facingleft == false)
                 {
                     transform.eulerAngles = new Vector3(0, 0, 0);
-                    facingleft = false;
+                    facingleft = true;
                 }
 
                 Vector2 targetPos = new Vector2(player.position.x, transform.position.y);

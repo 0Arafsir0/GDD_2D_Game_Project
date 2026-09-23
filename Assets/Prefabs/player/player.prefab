@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 2942824103283357831}
   m_Layer: 3
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,8 +93,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.01, y: -2.822, z: 0}
-  m_LocalScale: {x: 0.8250815, y: 0.8250815, z: 0.8250815}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1944329100503915419}
   - {fileID: 1303943045309181356}
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 772618615
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3768127733405742447, guid: 85e98a5af22e2a34bbd8de9fde6f210a, type: 3}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e3f9ef9deb355442ab8b12835860e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
-  playerHealth: 2
+  playerHealth: 10
   rb: {fileID: 2244595647182916074}
   jumpForce: 12
   movespeed: 5
@@ -285,6 +285,13 @@ MonoBehaviour:
   PlayerDamageTextPoint: {fileID: 2019776146533088281}
   explosionPoint: {fileID: 6211130323640686740}
   Explosion: {fileID: 6135559226975852359, guid: e546e481a94573d4c840e29f640d1da5, type: 3}
+  CollectEffectPrefab: {fileID: 6058740796973205612, guid: eba2fdef8e2464a4983a962925cde8d8, type: 3}
+  HeartText: {fileID: 0}
+  GemText: {fileID: 0}
+  GameOverPanel: {fileID: 0}
+  whatIsWater:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!1 &6561138505491018874
 GameObject:
   m_ObjectHideFlags: 0

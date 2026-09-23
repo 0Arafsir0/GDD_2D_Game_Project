@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -27,11 +30,23 @@ public class Player : MonoBehaviour
     public Transform explosionPoint;
     public GameObject Explosion;
 
+    private int TotalGemsCollected;
+
+    public GameObject CollectEffectPrefab;
+
+    public Text HeartText;
+    public Text GemText;
+    public GameObject GameOverPanel;
+
+    public LayerMask whatIsWater;
+
+
     void Start()
      {
-          isGrounded = true;
-          facingRight = true;
-          animator = this.gameObject.GetComponent<Animator>();
+        isGrounded = true;
+        facingRight = true;
+        animator = this.gameObject.GetComponent<Animator>();
+        
         if (instance == null)
         {
             instance = this;
@@ -40,7 +55,9 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        TotalGemsCollected = 0;
+        HeartText.text = playerHealth.ToString();
+        
     }
 
     void Update()
@@ -83,17 +100,30 @@ public class Player : MonoBehaviour
         tempArrowPrefab.GetComponent<Rigidbody2D>().linearVelocity = arrowSpawnPoint.right * arrowSpeed; 
     }
 
+
     public void PlayerTookDamage(int damageamount)
     {
         if (playerHealth <= 0f)
+            return;
+
+        playerHealth -= damageamount;
+
+        HeartText.text = playerHealth.ToString();
+
+        animator.SetTrigger("hurt");
+
+        CameraShake.instance.ShakeCamera(1f, 0.12f);
+
+        Instantiate(
+            FloatingText,
+            PlayerDamageTextPoint.position,
+            Quaternion.identity
+        );
+
+        if (playerHealth <= 0f)
         {
             die();
-            return;
         }
-        animator.SetTrigger("hurt");
-        playerHealth -= damageamount;
-        CameraShake.instance.ShakeCamera(1f, 0.12f);
-        Instantiate(FloatingText, PlayerDamageTextPoint.position, Quaternion.identity);
     }
 
     private void PlayRunAnimation()
@@ -142,8 +172,41 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
             animator.SetBool("jump", false);
+
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            die();
+            return;
+        }
+
+        if (other.gameObject.CompareTag("Arrow_Enemy"))
+        {
+            PlayerTookDamage(1);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Gem"))
+        {
+            TotalGemsCollected++;
+            GemText.text = TotalGemsCollected.ToString();
+            GameObject tempGem= Instantiate(CollectEffectPrefab, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(tempGem, 0.605f);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            playerHealth++;
+            HeartText.text = playerHealth.ToString();
+            GameObject tempHeart = Instantiate(CollectEffectPrefab, other.gameObject.transform.position, Quaternion.identity);
+            Destroy(tempHeart, 0.605f);
+            Destroy(other.gameObject);
+        }
+    }
+
 
     private void OnDrawGizmosSelected()
     {
@@ -154,12 +217,49 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
         
     }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(
+            SceneManager.GetActiveScene().buildIndex
+        );
+    }
+    void ShowGameOver()
+    {
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     void die()
     {
         Debug.Log("Player Died!");
+        movement = 0f;
+        rb.linearVelocity = Vector2.zero;
+
+        // Disable player controls
+        this.enabled = false;
+
+        // Disable player collider
+        GetComponent<Collider2D>().enabled = false;
+
+        // Hide player sprite
+        SpriteRenderer playerSprite = GetComponent<SpriteRenderer>();
+
+        if (playerSprite != null)
+        {
+            playerSprite.enabled = false;
+        }
+
         CameraShake.instance.ShakeCamera(4f, 0.15f);
         GameObject tempexplosion= Instantiate(Explosion, explosionPoint.position, Quaternion.identity);
         Destroy(tempexplosion, .501f);
-        Destroy(this.gameObject);
+        if (GameOverPanel != null)
+        {
+            GameOverPanel.SetActive(true);
+        }
+        Invoke(nameof(ShowGameOver), 0.55f);
+        // Destroy(this.gameObject);
     }
 }

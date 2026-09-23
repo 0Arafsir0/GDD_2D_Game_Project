@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Arrow
   - Enemy
+  - Arrow_Enemy
+  - Gem
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -50,17 +53,29 @@ TagManager:
   - name: BG1
     uniqueID: 686577807
     locked: 0
-  - name: water
-    uniqueID: 1980995511
+  - name: trees
+    uniqueID: 1374026699
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: enemy
+    uniqueID: 1006178827
+    locked: 0
+  - name: water
+    uniqueID: 1980995511
+    locked: 0
   - name: player
     uniqueID: 772618615
     locked: 0
+  - name: ground
+    uniqueID: 1748158185
+    locked: 0
   - name: grass
     uniqueID: 1957032089
+    locked: 0
+  - name: collectEffect
+    uniqueID: 3706228147
     locked: 0
   m_RenderingLayers:
   - Default
