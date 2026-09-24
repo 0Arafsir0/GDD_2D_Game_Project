@@ -101,6 +101,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7692968069405135721, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -163,6 +167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -188,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 354166564037556295, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Offset.x
       value: 0.4063656
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4623815532936262540, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Name
@@ -295,6 +307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7692968069405135721, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -320,6 +336,10 @@ PrefabInstance:
     - target: {fileID: 354166564037556295, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Offset.x
       value: 0.37650418
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4623815532936262540, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Name
@@ -386,6 +406,10 @@ PrefabInstance:
     - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: RaycastLength
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1530504302896379317, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_SortingLayer
@@ -468,6 +492,10 @@ PrefabInstance:
     - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: RaycastLength
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1530504302896379317, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_SortingLayer
@@ -583,6 +611,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -601,6 +633,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5804780022041112313}
     m_Modifications:
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4623815532936262540, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Name
       value: Enemy_2 (5)
@@ -719,6 +755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -752,6 +792,10 @@ PrefabInstance:
     - target: {fileID: 354166564037556295, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Offset.y
       value: -0.013053179
+      objectReference: {fileID: 0}
+    - target: {fileID: 1041380783649848967, guid: f269941213ffa4d42968627fdefb983a, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4623815532936262540, guid: f269941213ffa4d42968627fdefb983a, type: 3}
       propertyPath: m_Name
@@ -859,6 +903,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -920,6 +968,10 @@ PrefabInstance:
     - target: {fileID: 7409620524909504961, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692968069405135721, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -991,6 +1043,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7692968069405135721, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1057,6 +1113,10 @@ PrefabInstance:
       propertyPath: attackRadius
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1118,6 +1178,10 @@ PrefabInstance:
     - target: {fileID: 5481867977603855395, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1189,6 +1253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7039555821118639686, guid: 0f8676ba870c3a64488a655b969e6b53, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1258,6 +1326,10 @@ PrefabInstance:
     - target: {fileID: 7409620524909504961, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692968069405135721, guid: 1e068643c37d0554c887fe0c81eb4f03, type: 3}
+      propertyPath: whatIsWater.m_Bits
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

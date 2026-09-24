@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         PlayRunAnimation();
         Flip();
 
-        if(Input.GetMouseButtonDown(0))
+        if(Mouse.current.leftButton.wasPressedThisFrame)
         {
            animator.SetTrigger("fire");
         }
@@ -178,7 +178,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             die();
             return;

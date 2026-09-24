@@ -35,6 +35,7 @@ public class enemy2 : MonoBehaviour
 
     public Transform attackPoint;
     public float attackRadius = 1f;
+    public LayerMask whatIsWater;
 
 
 
@@ -156,6 +157,11 @@ public class enemy2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            die();
+            return;
+        }
         if (other.gameObject.CompareTag("Arrow"))
         {
             EnemyTookDamage(1);

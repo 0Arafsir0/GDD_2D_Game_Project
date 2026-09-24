@@ -20,6 +20,7 @@ public class enemy3 : MonoBehaviour
 
     private bool isPlayerInRange;
     public Vector3 offset;
+    public LayerMask whatIsWater;
 
 
 
@@ -113,6 +114,11 @@ public class enemy3 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
+        {
+            die();
+            return;
+        }
         if (other.gameObject.CompareTag("Arrow"))
         {
             EnemyTookDamage(1);
